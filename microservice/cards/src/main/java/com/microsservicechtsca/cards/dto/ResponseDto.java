@@ -1,4 +1,4 @@
-package com.microsservicechtsca.accounts.dto;
+package com.microsservicechtsca.cards.dto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
@@ -20,4 +20,5 @@ public class ResponseDto {
             description = "Status message in the response"
     )
     private String statusMsg;
+
 }
