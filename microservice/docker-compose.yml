@@ -1,6 +1,6 @@
 services:
   accounts:
-    image: "inpalla/accounts:s4"
+    image: "inpalla/accounts:s6"
     container_name: accounts-ms
     ports:
       - "8080:8080"
@@ -11,7 +11,7 @@ services:
     networks:
       - eazybank
   loans:
-    image: "inpalla/loans:s4"
+    image: "inpalla/loans:s6"
     container_name: loans-ms
     ports:
       - "8090:8090"
@@ -22,7 +22,7 @@ services:
     networks:
       - eazybank
   cards:
-    image: "inpalla/cards:s4"
+    image: "inpalla/cards:s6"
     container_name: cards-ms
     ports:
       - "9000:9000"

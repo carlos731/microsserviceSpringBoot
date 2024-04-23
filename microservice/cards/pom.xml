@@ -83,7 +83,9 @@
 				<version>3.4.0</version>
 				<configuration>
 					<to>
-						<image>inpalla/${project.artifactId}:s4</image>
+						<!--section 4:-->
+						<!--<image>inpalla/${project.artifactId}:s4</image>-->
+						<image>inpalla/${project.artifactId}:s6</image>
 					</to>
 				</configuration>
 			</plugin>
