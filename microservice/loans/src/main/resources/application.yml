@@ -19,3 +19,12 @@ spring:
 
 build:
   version: "1.0"
+
+loans:
+  message: "Welcome to EazyBank accounts related local APIs"
+  contactDetails:
+    name: "Carlos Henrique - Developer"
+    email: "carlos@gmail.com"
+  onCallSupport:
+    - +55 (21) 99035-1234
+    - +55 (21) 92325-1564
