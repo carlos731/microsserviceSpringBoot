@@ -196,7 +196,7 @@ public class LoansController {
                             schema = @Schema(implementation = ErrorResponseDto.class)
                     )
             )
-    }
+        }
     )
     @GetMapping("/build-info")
     public ResponseEntity<String> getBuildInfo() {
@@ -229,7 +229,6 @@ public class LoansController {
                 .status(HttpStatus.OK)
                 .body(environment.getProperty("JAVA_HOME"));
     }
-
     @Operation(
             summary = "Get Contact Info",
             description = "Contact Info details that can be reached out in case of any issues"
@@ -246,7 +245,7 @@ public class LoansController {
                             schema = @Schema(implementation = ErrorResponseDto.class)
                     )
             )
-    }
+        }
     )
     @GetMapping("/contact-info")
     public ResponseEntity<LoansContactInfoDto> getContactInfo() {
