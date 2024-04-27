@@ -2,7 +2,9 @@ server:
   port: 8080
 spring:
   application:
-    name: accounts
+    name: "accounts"
+  profiles:
+    active: "prod"
   datasource:
     url: jdbc:h2:mem:testdb
     driverClassName: org.h2.Driver
@@ -17,22 +19,4 @@ spring:
       ddl-auto: update
     show-sql: true
   config:
-    import:
-      - "application_qa.yml"
-      - "application_prod.yml"
-  profiles:
-      active:
-        - "qa"
-
-
-build:
-  version: "3.0"
-
-accounts:
-  message: "Welcome to EazyBank accounts related local APIs"
-  contactDetails:
-    name: "Carlos Henrique - Developer"
-    email: "carlos@gmail.com"
-  onCallSupport:
-    - +55 (21) 99035-1234
-    - +55 (21) 92325-1564
+    import: "optional:configserver:http://localhost:8071/"
