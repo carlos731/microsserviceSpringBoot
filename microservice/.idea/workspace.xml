@@ -6,7 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="c82a38c0-fa7b-4415-8d9d-ec7b8c3783c9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configserver/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/src/main/java/com/microsservicechtsca/accounts/dto/AccountsContactInfoDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/java/com/microsservicechtsca/accounts/dto/AccountsContactInfoDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/microsservicechtsca/cards/dto/CardsContactInfoDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/microsservicechtsca/cards/dto/CardsContactInfoDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/microsservicechtsca/loans/dto/LoansContactInfoDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/microsservicechtsca/loans/dto/LoansContactInfoDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,11 +52,11 @@
       <recent name="D:\udemy\cursos\Microsservices With Spring Boot\project\microservice\configserver\src\main\resources\config" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.CardsApplication">
+  <component name="RunManager" selected="Application.LoansApplication">
     <configuration name="AccountsApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.microsservicechtsca.accounts.AccountsApplication" />
       <module name="accounts" />
-      <option name="PROGRAM_PARAMETERS" value="--spring.profiles.active=qa" />
+      <option name="PROGRAM_PARAMETERS" value="--spring.profiles.active=prod" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.microsservicechtsca.accounts.*" />
@@ -103,10 +108,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.LoansApplication" />
+        <item itemvalue="Application.AccountsApplication" />
         <item itemvalue="Application.CardsApplication" />
         <item itemvalue="Application.ConfigserverApplication" />
-        <item itemvalue="Application.AccountsApplication" />
-        <item itemvalue="Application.LoansApplication" />
       </list>
     </recent_temporary>
   </component>
