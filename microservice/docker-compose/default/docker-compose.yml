@@ -1,21 +1,71 @@
 services:
-  rabbit:
-    image: rabbitmq:3.12-management
-    hostname: rabbitmq
+#  rabbit:
+#    image: rabbitmq:3.12-management
+#    hostname: rabbitmq
+#    ports:
+#      - "5672:5672"
+#      - "15672:15672"
+#    healthcheck:
+#      test: rabbitmq-diagnostics check_port_connectivity
+#      interval: 10s
+#      timeout: 5s
+#      retries: 10
+#      start_period: 5s
+#    networks:
+#      - eazybank
+  accountsdb:
+    image: mysql
+    container_name: accountsdb
     ports:
-      - "5672:5672"
-      - "15672:15672"
+      - 3306:3306
     healthcheck:
-      test: rabbitmq-diagnostics check_port_connectivity
-      interval: 10s
-      timeout: 5s
+      test: [ "CMD", "mysqladmin" ,"ping", "-h", "localhost" ]
+      timeout: 10s
       retries: 10
-      start_period: 5s
+      interval: 10s
+      start_period: 10s
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: accountsdb
+    networks:
+      - eazybank
+
+  loansdb:
+    image: mysql
+    container_name: loansdb
+    ports:
+      - 3307:3306
+    healthcheck:
+      test: [ "CMD", "mysqladmin" ,"ping", "-h", "localhost" ]
+      timeout: 10s
+      retries: 10
+      interval: 10s
+      start_period: 10s
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: loansdb
+    networks:
+      - eazybank
+
+  cardsdb:
+    image: mysql
+    container_name: cardsdb
+    ports:
+      - 3308:3306
+    healthcheck:
+      test: [ "CMD", "mysqladmin" ,"ping", "-h", "localhost" ]
+      timeout: 10s
+      retries: 10
+      interval: 10s
+      start_period: 10s
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: cardsdb
     networks:
       - eazybank
 
   configserver:
-    image: "inpalla/configserver:s6"
+    image: "inpalla/configserver:s7"
     container_name: configserver-ms
     ports:
       - "8071:8071"
@@ -42,9 +92,6 @@ services:
     container_name: accounts-ms
     ports:
       - "8080:8080"
-    depends_on:
-      configserver:
-        condition: service_healthy
     deploy:
       resources:
         limits:
@@ -56,15 +103,20 @@ services:
       SPRING_CONFIG_IMPORT: "configserver:http://configserver:8071/"
       SPRING_RABBITMQ_HOST: "rabbit"
       SPRING_PROFILES_ACTIVE: default
+      SPRING_DATASOURCE_URL: "jdbc:mysql://accountsdb:3306/accountsdb"
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+    depends_on:
+      configserver:
+        condition: service_healthy
+      accountsdb:
+        condition: service_healthy
 
   loans:
     image: "inpalla/loans:s6"
     container_name: loans-ms
     ports:
       - "8090:8090"
-    depends_on:
-      configserver:
-        condition: service_healthy
     deploy:
       resources:
         limits:
@@ -76,15 +128,20 @@ services:
       SPRING_CONFIG_IMPORT: "configserver:http://configserver:8071/"
       SPRING_RABBITMQ_HOST: "rabbit"
       SPRING_PROFILES_ACTIVE: default
+      SPRING_DATASOURCE_URL: "jdbc:mysql://loansdb:3307/loansdb"
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+    depends_on:
+      configserver:
+        condition: service_healthy
+      loansdb:
+        condition: service_healthy
 
   cards:
     image: "inpalla/cards:s6"
     container_name: cards-ms
     ports:
       - "9000:9000"
-    depends_on:
-      configserver:
-        condition: service_healthy
     deploy:
       resources:
         limits:
@@ -96,6 +153,14 @@ services:
       SPRING_CONFIG_IMPORT: "configserver:http://configserver:8071/"
       SPRING_RABBITMQ_HOST: "rabbit"
       SPRING_PROFILES_ACTIVE: default
+      SPRING_DATASOURCE_URL: "jdbc:mysql://cardsdb:3308/cardsdb"
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+    depends_on:
+      configserver:
+        condition: service_healthy
+      cardsdb:
+        condition: service_healthy
 
 networks:
   eazybank:
