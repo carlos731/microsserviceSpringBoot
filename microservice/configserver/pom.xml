@@ -26,6 +26,7 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-config-server</artifactId>
 		</dependency>
+		<!-- comentado na seção 7
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-bus-amqp</artifactId>
@@ -34,6 +35,7 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-config-monitor</artifactId>
 		</dependency>
+		-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
