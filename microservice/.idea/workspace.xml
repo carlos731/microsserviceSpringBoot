@@ -5,13 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="14c94387-5e7f-462a-aea6-230c7670738f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/accounts/src/main/java/com/microsservicechtsca/accounts/dto/CardsDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/accounts/src/main/java/com/microsservicechtsca/accounts/dto/LoansDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/accounts/src/main/java/com/microsservicechtsca/accounts/service/client/CardsFeignClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/accounts/src/main/java/com/microsservicechtsca/accounts/service/client/LoansFeignClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/src/main/java/com/microsservicechtsca/accounts/controller/CustomerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/src/main/java/com/microsservicechtsca/accounts/dto/CustomerDetailsDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/src/main/java/com/microsservicechtsca/accounts/service/ICustomersService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/src/main/java/com/microsservicechtsca/accounts/service/impl/CustomersServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/src/main/java/com/microsservicechtsca/accounts/AccountsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/java/com/microsservicechtsca/accounts/AccountsApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/src/main/java/com/microsservicechtsca/accounts/mapper/CustomerMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/java/com/microsservicechtsca/accounts/mapper/CustomerMapper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +22,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -49,6 +50,7 @@
     "Application.LoansApplication.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
@@ -63,7 +65,7 @@
       <recent name="com.microsservicechtsca.accounts.service.client" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.EurekaserverApplication">
+  <component name="RunManager" selected="Application.LoansApplication">
     <configuration name="AccountsApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.microsservicechtsca.accounts.AccountsApplication" />
       <module name="accounts" />
@@ -131,9 +133,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.LoansApplication" />
         <item itemvalue="Application.CardsApplication" />
         <item itemvalue="Application.AccountsApplication" />
-        <item itemvalue="Application.LoansApplication" />
         <item itemvalue="Application.EurekaserverApplication" />
         <item itemvalue="Application.ConfigserverApplication" />
       </list>
