@@ -89,6 +89,8 @@ services:
         condition: service_healthy
       configserver:
         condition: service_healthy
+      eurekaserver:
+        condition: service_healthy
     networks:
       - eazybank
 
@@ -113,6 +115,8 @@ services:
         condition: service_healthy
       configserver:
         condition: service_healthy
+      eurekaserver:
+        condition: service_healthy
     networks:
       - eazybank
 
@@ -136,6 +140,8 @@ services:
       cardsdb:
         condition: service_healthy
       configserver:
+        condition: service_healthy
+      eurekaserver:
         condition: service_healthy
     networks:
       - eazybank
