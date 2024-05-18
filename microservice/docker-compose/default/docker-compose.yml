@@ -59,6 +59,8 @@ services:
     depends_on:
       configserver:
         condition: service_healthy
+      eurekaserver:
+        condition: service_healthy
     networks:
       - eazybank
 
@@ -79,6 +81,30 @@ services:
     depends_on:
       configserver:
         condition: service_healthy
+      eurekaserver:
+        condition: service_healthy
+    networks:
+      - eazybank
+
+  loans1:
+    image: "inpalla/loans:s8"
+    container_name: loans-ms1
+    ports:
+      - "8091:8090"
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+    environment:
+      SPRING_APPLICATION_NAME: "loans"
+      SPRING_PROFILES_ACTIVE: default
+      SPRING_CONFIG_IMPORT: "configserver:http://configserver:8071/"
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: "http://eurekaserver:8070/eureka/"
+    depends_on:
+      configserver:
+        condition: service_healthy
+      eurekaserver:
+        condition: service_healthy
     networks:
       - eazybank
 
@@ -98,6 +124,8 @@ services:
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: "http://eurekaserver:8070/eureka/"
     depends_on:
       configserver:
+        condition: service_healthy
+      eurekaserver:
         condition: service_healthy
     networks:
       - eazybank
