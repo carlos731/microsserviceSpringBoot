@@ -28,8 +28,8 @@ info:
     description: "Eazy Bank Gateway Server Application"
     version: "1.0.0"
 
-loggin:
+logging:
   level:
     com:
-      eazybytes:
+      microsserviceschtsca:
         gatewayserver: DEBUG
