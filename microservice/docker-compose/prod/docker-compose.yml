@@ -76,6 +76,16 @@ services:
     networks:
       - eazybank
 
+  prometheus:
+    image: prom/prometheus:v2.50.1
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ../observability/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    networks:
+      - eazybank
+
   grafana:
     image: grafana/grafana:latest
     environment:
